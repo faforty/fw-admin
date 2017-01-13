@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>fwadmin_new.dev</title>
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="//flatfull.com/themes/angulr/libs/jquery/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+    <link href="//flatfull.com/themes/angulr/html/css/app.min.css" rel="stylesheet"/>
+    <link href="/static/css/app.css" rel="stylesheet"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css" rel="stylesheet">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/theme-chrome.js" type="text/javascript" charset="utf-8"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.2.5/mode-html.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div class="app app-header-fixed app-aside-fixed">
+    <div id="app"></div>
+</div>
+
+<script>
+    var FwAdmin = {
+        csrfToken: 'RucmlGFgbXKADolez4yZwfhgOWM8TbCLcGHtMLCC',
+        url: 'http://admin.dev/',
+        user: {
+            email: 'faforty@ya.ru',
+            token: 'sD%FH*(J&^FG'
+        }
+    };
+</script>
+<script src="dist/build.js"></script>
+<script>
+    $(document).on("click", "[ui-nav] a", function (b) {
+        var c, d = $(b.target);
+        d.is("a") || (d = d.closest("a"));
+        c = d.parent().siblings(".active");
+        c && c.toggleClass("active").find("> ul:visible").slideUp(200);
+        d.parent().hasClass("active") && d.next().slideUp(200) || d.next().slideDown(200);
+        d.parent().toggleClass("active");
+        d.next().is("ul") && b.preventDefault();
+    });
+
+    // Сворачивание меню
+
+    $('.navbar-nav').find('a').eq(0).click(function() {
+        $(this).children().toggleClass('fa-indent');
+        $('.app').toggleClass('app-aside-folded');
+
+        return false;
+    });
+</script>
+</body>
+</html>

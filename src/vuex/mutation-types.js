@@ -1,0 +1,8 @@
+export const EDITOR_POST = 'EDITOR_POST'
+export const EDIT_CAT = 'EDIT_CAT'
+export const RECEIVE_POSTS = 'RECEIVE_POSTS'
+export const BOARD_ADD_CAT = 'BOARD_ADD_CAT'
+export const SET_USER = 'SET_USER'
+export const REMOVE_USER = 'REMOVE_USER'
+export const SET_TOKEN = 'SET_TOKEN'
+export const REMOVE_TOKEN = 'REMOVE_TOKEN'
